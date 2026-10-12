@@ -1,0 +1,199 @@
+/* ============================================
+   Navbar Styles — Sits at Top of Second Section
+   ============================================ */
+
+.navbarWrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 18, 0.88) 0%,
+    rgba(7, 7, 10, 0.94) 100%
+  );
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.09),
+    0 12px 32px -8px rgba(0, 0, 0, 0.75),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle luminous gradient highlight along the bottom edge */
+.navbarWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(142, 219, 0, 0.3) 15%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(0, 229, 255, 0.3) 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  height: 72px;
+  padding: 0 clamp(1.5rem, 3.8vw, 4.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- Left: Brand CUBOIC ---------- */
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  border-radius: 8px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.brandLink:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.logoImg {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(142, 219, 0, 0.45));
+}
+
+.brandText {
+  font-family: "Google Sans", var(--font-montserrat), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Center: Navigation Links ---------- */
+.navCenter {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 5px 8px;
+  border-radius: 28px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.navLink {
+  /* Google Labs uses 1.4rem on a 10px base (= 14px) */
+  font: 400 14px / normal "Google Sans", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.navLink:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Right: Social Icons ---------- */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.socialIcon:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.socialIcon:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Mobile Responsiveness ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1.25rem;
+    height: 62px;
+  }
+
+  .navCenter {
+    gap: 0.5rem;
+    padding: 4px 6px;
+  }
+
+  .navLink {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+  }
+
+  .brandText {
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+  }
+
+  .logoImg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .socialIcon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 540px) {
+  .navCenter {
+    display: none; /* Can be toggle menu on very narrow phones */
+  }
+}
