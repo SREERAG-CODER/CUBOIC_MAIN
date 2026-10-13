@@ -1,4 +1,4 @@
-import { Inter, Outfit, Montserrat, Press_Start_2P, Caveat } from "next/font/google";
+import { Inter, Outfit, Montserrat, Press_Start_2P, Caveat, Orbitron, Oxanium } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,6 +17,18 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const oxanium = Oxanium({
+  variable: "--font-oxanium",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const pressStart2P = Press_Start_2P({
@@ -41,7 +53,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${outfit.variable} ${montserrat.variable} ${pressStart2P.variable} ${caveat.variable}`}
+      className={`${inter.variable} ${outfit.variable} ${montserrat.variable} ${orbitron.variable} ${oxanium.variable} ${pressStart2P.variable} ${caveat.variable}`}
     >
       <body>{children}</body>
     </html>

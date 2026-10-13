@@ -2,10 +2,11 @@
 .footer {
   position: relative;
   width: 100%;
-  background: #f5f5f5;
+  background: #ffffff;
   color: #111111;
   overflow: hidden;
   z-index: 2;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Top content row */
@@ -161,23 +162,23 @@
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
-  height: clamp(140px, 22vw, 280px);
+  height: clamp(100px, 18vw, 280px);
   pointer-events: none;
   user-select: none;
-  margin-top: -1rem;
+  margin-top: 1rem;
 }
 
 .wordmark {
   font-family: var(--font-montserrat), "Montserrat", Impact, sans-serif;
-  font-size: clamp(12rem, 20vw, 26rem);
+  font-size: clamp(4.2rem, 19vw, 24rem);
   font-weight: 900;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111111;
+  color: #0c0d10;
   line-height: 0.82;
   white-space: nowrap;
-  /* Only top ~60% visible, bottom clipped by parent overflow */
-  transform: translateY(28%);
+  /* Top ~65% visible, bottom clipped */
+  transform: translateY(26%);
 }
 
 /* ---- Responsive ---- */

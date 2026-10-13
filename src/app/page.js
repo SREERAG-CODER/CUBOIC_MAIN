@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import PhoneStoryShowcase from "./components/PhoneStoryShowcase";
 import Counter from "./components/Counter";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 const STORY_CONTENT = [
   {
@@ -95,8 +96,8 @@ export default function Home() {
     <main className={styles.main}>
       {/* Hero Section */}
       <section className={styles.hero} id="hero">
-        {/* Top Center Brand Name - Clickable to Reload */}
-        <div className={styles.topBrand}>
+        {/* Top Header Bar: CUBOIC (Left Corner) & ONOMAX (Right Corner) */}
+        <header className={styles.heroHeader}>
           <button
             type="button"
             onClick={handleReload}
@@ -106,7 +107,32 @@ export default function Home() {
           >
             CUBOIC
           </button>
-        </div>
+
+          <a
+            href="https://onomax.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.onomaxLink}
+            aria-label="Visit ONOMAX"
+            title="Visit ONOMAX"
+          >
+            <span className={styles.onomaxText}>ONOMAX</span>
+            <svg
+              className={styles.onomaxArrow}
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </a>
+        </header>
 
         {/* Center Interactive Slit-Scan EXPLORE Banner */}
         <div className={styles.centerExplore}>
@@ -169,7 +195,7 @@ export default function Home() {
             type="button"
             className={styles.dividerPill}
             onClick={() => {
-              const el = document.getElementById("products");
+              const el = document.getElementById("showcase");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
           >
@@ -179,8 +205,8 @@ export default function Home() {
           <p className={styles.dividerSub}>Explore what we are making</p>
         </div>
 
-        {/* Third Section — continues same grid background */}
-        <section className={styles.thirdSection} id="products">
+        {/* Third Section — Showcase White Board with robots */}
+        <section className={styles.thirdSection} id="showcase">
           {/* Elevated White Board with depth effect */}
           <div className={styles.whiteBoard}>
             {/* Robot Peeking Frame — edge robots behind content */}
@@ -244,6 +270,18 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Starting of Products Display Section (Below the Overview White Board) */}
+        <div className={styles.sectionDivider} id="products">
+          <button
+            type="button"
+            className={styles.dividerPill}
+          >
+            DISCOVER
+          </button>
+          <h3 className={styles.dividerHeading}>INSIDE OUR WORLD</h3>
+          <p className={styles.dividerSub}>Young minds. Bold ideas. Real creations.</p>
+        </div>
 
         {/* Fourth Section — Multidisciplinary Capabilities / Company (Continues Grid Background) */}
         <section className={styles.fourthSection} id="company">
@@ -389,6 +427,9 @@ export default function Home() {
 
         {/* Contact Section — Full-width template with dark theme and live map */}
         <ContactSection />
+
+        {/* Footer — White background with massive CUBOIC wordmark */}
+        <Footer />
       </div>
     </main>
   );

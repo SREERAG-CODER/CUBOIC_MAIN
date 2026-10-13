@@ -280,9 +280,6 @@ export default function ContactSection() {
         {/* Subtle Map Ambient Border & Overlay */}
         <div className={styles.mapTopFade} />
       </div>
-
-      {/* Reserved spacing for the footer section */}
-      <div className={styles.footerSpacer} aria-hidden="true" />
     </section>
   );
 }
