@@ -7,6 +7,7 @@ import GridLightBackground from "./components/GridLightBackground";
 import Navbar from "./components/Navbar";
 import PhoneStoryShowcase from "./components/PhoneStoryShowcase";
 import Counter from "./components/Counter";
+import ContactSection from "./components/ContactSection";
 
 const STORY_CONTENT = [
   {
@@ -33,6 +34,21 @@ const STORY_CONTENT = [
       "State-of-the-art tools meet unwavering quality — electronics, optics, and mechanics unified.",
     label: "Our Workshop",
   },
+];
+
+const DISCIPLINE_TAGS = [
+  { label: "Electronics Development", variant: "outline" },
+  { label: "Robotics", variant: "yellow" },
+  { label: "CS Development", variant: "green" },
+  { label: "Autonomous Systems", variant: "outline" },
+  { label: "Embedded Systems", variant: "outline" },
+  { label: "Hardware Dev", variant: "orange" },
+  { label: "AI & Perception", variant: "purple" },
+  { label: "Mechatronics", variant: "outline" },
+  { label: "Computer Vision", variant: "outline" },
+  { label: "Edge Computing", variant: "cyan" },
+  { label: "Sensor Fusion", variant: "outline" },
+  { label: "Rapid Prototyping", variant: "outline" },
 ];
 
 export default function Home() {
@@ -167,6 +183,13 @@ export default function Home() {
         <section className={styles.thirdSection} id="products">
           {/* Elevated White Board with depth effect */}
           <div className={styles.whiteBoard}>
+            {/* Robot Peeking Frame — edge robots behind content */}
+            <img
+              src="/robots_peeking_frame.jpg"
+              alt=""
+              className={styles.robotFrame}
+              aria-hidden="true"
+            />
             <div className={styles.thirdSectionContainer}>
               {/* Left side: Realistic Phone Mobile Display */}
               <div className={styles.phoneColumn}>
@@ -206,15 +229,16 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* Counter */}
-                <div className={styles.storyCounter}>
-                  <span className={styles.counterCurrent}>
-                    {String(activeStory + 1).padStart(2, "0")}
-                  </span>
-                  <span className={styles.counterSeparator}>/</span>
-                  <span className={styles.counterTotal}>
-                    {String(STORY_CONTENT.length).padStart(2, "0")}
-                  </span>
+                {/* Disciplines & Development Tags */}
+                <div className={styles.tagsContainer}>
+                  {DISCIPLINE_TAGS.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className={`${styles.tagPill} ${styles[`tag_${tag.variant}`]}`}
+                    >
+                      {tag.label}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -354,7 +378,7 @@ export default function Home() {
                 <p className={styles.bannerSub}>Let&apos;s build the future together. Partner with our multidisciplinary collective.</p>
               </div>
               <a
-                href="mailto:contact@cuboic.com"
+                href="#contact"
                 className={styles.bannerButton}
               >
                 CONNECT WITH US →
@@ -362,6 +386,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Contact Section — Full-width template with dark theme and live map */}
+        <ContactSection />
       </div>
     </main>
   );

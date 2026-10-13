@@ -48,6 +48,9 @@ export default function Navbar() {
           <a href="#company" className={styles.navLink}>
             Company
           </a>
+          <a href="#contact" className={styles.navLink}>
+            Contact
+          </a>
         </div>
 
         {/* Right: Instagram & LinkedIn Icons */}

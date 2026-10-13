@@ -323,7 +323,21 @@
   overflow: hidden;
 }
 
+/* Robot Peeking Frame — decorative edge robots behind content */
+.robotFrame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .thirdSectionContainer {
+  position: relative;
+  z-index: 3;
   width: 100%;
   max-width: 1320px;
   display: grid;
@@ -345,8 +359,8 @@
   flex-direction: column;
   justify-content: center;
   min-height: 200px;
-  gap: 2.5rem;
-  padding: 2rem 0;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
 }
 
 /* Story indicator dots */
@@ -375,25 +389,25 @@
   border-radius: 7px;
 }
 
-/* Animated text block with crossfade */
+/* Animated text block with crossfade via CSS Grid stacking (prevents any overlapping) */
 .storyTextBlock {
   position: relative;
-  min-height: 280px;
+  display: grid;
+  grid-template-areas: "slide";
+  width: 100%;
 }
 
 .storyTextSlide {
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-area: slide;
   width: 100%;
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(12px);
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.95rem;
 }
 
 .storyTextActive {
@@ -441,40 +455,82 @@
   overflow: hidden;
 }
 
-/* Counter "01 / 04" */
-.storyCounter {
+/* Discipline / Development Tags Container */
+.tagsContainer {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
-  font-family: var(--font-montserrat), "Montserrat", monospace;
-  user-select: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 10px;
+  max-width: 580px;
+  margin-top: 1rem;
 }
 
-.counterCurrent {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #111111;
-  letter-spacing: 0.02em;
-  transition: all 0.3s ease;
-}
-
-.counterSeparator {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.25);
-}
-
-.counterTotal {
-  font-size: 1.1rem;
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.92rem;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.35);
-  letter-spacing: 0.02em;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  user-select: none;
+  cursor: default;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tagPill:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tag_outline {
+  background: transparent;
+  color: #111111;
+  border: 1.5px solid #111111;
+}
+
+.tag_yellow {
+  background: #f4c542;
+  color: #111111;
+  border: 1.5px solid #f4c542;
+}
+
+.tag_green {
+  background: #52b788;
+  color: #111111;
+  border: 1.5px solid #52b788;
+}
+
+.tag_orange {
+  background: #e76235;
+  color: #111111;
+  border: 1.5px solid #e76235;
+}
+
+.tag_purple {
+  background: #c88ef7;
+  color: #111111;
+  border: 1.5px solid #c88ef7;
+}
+
+.tag_cyan {
+  background: #a8d7d7;
+  color: #111111;
+  border: 1.5px solid #a8d7d7;
 }
 
 @media (max-width: 968px) {
   .whiteBoard {
     border-radius: 32px;
     padding: 3rem 1.5rem;
+  }
+
+  .robotFrame {
+    display: none;
   }
 
   .thirdSectionContainer {
@@ -495,7 +551,7 @@
     max-width: 100%;
   }
 
-  .storyCounter {
+  .tagsContainer {
     justify-content: center;
   }
 }
@@ -504,6 +560,15 @@
   .whiteBoard {
     border-radius: 24px;
     padding: 2.5rem 1rem;
+  }
+
+  .tagsContainer {
+    gap: 8px 8px;
+  }
+
+  .tagPill {
+    padding: 6px 14px;
+    font-size: 0.82rem;
   }
 }
 
