@@ -6,7 +6,6 @@ import ExploreText from "./components/ExploreText";
 import GridLightBackground from "./components/GridLightBackground";
 import Navbar from "./components/Navbar";
 import PhoneStoryShowcase from "./components/PhoneStoryShowcase";
-import Counter from "./components/Counter";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
@@ -109,14 +108,14 @@ export default function Home() {
           </button>
 
           <a
-            href="https://onomax.in"
+            href="https://www.onomex.com"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.onomaxLink}
-            aria-label="Visit ONOMAX"
-            title="Visit ONOMAX"
+            aria-label="Visit ONOMEX"
+            title="Visit ONOMEX"
           >
-            <span className={styles.onomaxText}>ONOMAX</span>
+            <span className={styles.onomaxText}>ONOMEX</span>
             <svg
               className={styles.onomaxArrow}
               width="18"
@@ -283,144 +282,131 @@ export default function Home() {
           <p className={styles.dividerSub}>Young minds. Bold ideas. Real creations.</p>
         </div>
 
-        {/* Fourth Section — Multidisciplinary Capabilities / Company (Continues Grid Background) */}
-        <section className={styles.fourthSection} id="company">
-          <div className={styles.fourthSectionContainer}>
-            {/* Section Header */}
-            <div className={styles.fourthHeader}>
-              <div className={styles.badgePill}>
-                <span className={styles.badgeDot} />
-                <span>04 / DISCIPLINES</span>
-              </div>
-              <h2 className={styles.fourthHeading}>
-                <span>ENGINEERING AT THE EDGE</span>
-                <span className={styles.fourthHeadingAccent}>OF WHAT&apos;S POSSIBLE.</span>
-              </h2>
-              <p className={styles.fourthDescription}>
-                We design and build full-stack intelligent machines from first principles — fusing rugged mechanical engineering, autonomous embedded systems, and spatial intelligence.
-              </p>
-            </div>
+        {/* Products Showcase Section: Cinematic Drone on Left with White Semicircle & Narrative on Right */}
+        <section className={styles.droneProductSection}>
+          {/* White Semicircle Backdrop behind Drone for dramatic depth */}
+          <div className={styles.whiteSemicircle} aria-hidden="true" />
 
-            {/* Core Capability Cards */}
-            <div className={styles.cardsGrid}>
-              {/* Card 1: Ground Robotics */}
-              <div className={styles.capabilityCard}>
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src="/robotics.jpg"
-                    alt="Autonomous Ground Robotics"
-                    className={styles.cardImage}
-                  />
-                  <div className={styles.cardImageOverlay} />
-                  <span className={styles.cardTag}>01 • GROUND</span>
-                </div>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>Autonomous Ground Robotics</h3>
-                  <p className={styles.cardText}>
-                    Quadruped dynamic gait control and high-payload terrain systems engineered for unstructured environments and real-world deployment.
-                  </p>
-                  <div className={styles.pillList}>
-                    <span className={styles.techPill}>Dynamic SLAM</span>
-                    <span className={styles.techPill}>Edge RTOS</span>
-                    <span className={styles.techPill}>Torque Control</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2: Aerial Systems */}
-              <div className={styles.capabilityCard}>
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src="/aerial.jpg"
-                    alt="Aerial Systems & UAVs"
-                    className={styles.cardImage}
-                  />
-                  <div className={styles.cardImageOverlay} />
-                  <span className={styles.cardTag}>02 • AERIAL</span>
-                </div>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>Aerial Systems & UAVs</h3>
-                  <p className={styles.cardText}>
-                    High-endurance multirotors and precision flight computers built for autonomous waypoint navigation, vision-guided telemetry, and surveillance.
-                  </p>
-                  <div className={styles.pillList}>
-                    <span className={styles.techPill}>Sensor Fusion</span>
-                    <span className={styles.techPill}>Waypoint Autonomy</span>
-                    <span className={styles.techPill}>Thermal Vision</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 3: AI & Spatial Compute */}
-              <div className={styles.capabilityCard}>
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src="/ai-systems.jpg"
-                    alt="Machine Intelligence & Edge AI"
-                    className={styles.cardImage}
-                  />
-                  <div className={styles.cardImageOverlay} />
-                  <span className={styles.cardTag}>03 • INTELLIGENCE</span>
-                </div>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>Machine Intelligence & Edge AI</h3>
-                  <p className={styles.cardText}>
-                    Spatial perception pipelines, neuromorphic computing models, and low-latency computer vision algorithms executed entirely on edge silicon.
-                  </p>
-                  <div className={styles.pillList}>
-                    <span className={styles.techPill}>Neural Vision</span>
-                    <span className={styles.techPill}>Spatial Compute</span>
-                    <span className={styles.techPill}>Sub-10ms Inference</span>
-                  </div>
-                </div>
+          <div className={styles.droneProductContainer}>
+            {/* Left: Immense Drone Model Bleeding Off-Screen with Depth */}
+            <div className={styles.droneVisualCol}>
+              {/* Drone Image Wrapper */}
+              <div className={styles.droneImageWrapper}>
+                <img
+                  src="/quadcopter_drone.png"
+                  alt="CUBOIC Autonomous Quadcopter Drone"
+                  className={styles.droneImage}
+                />
               </div>
             </div>
 
-            {/* Metrics Row */}
-            <div className={styles.metricsRow}>
-              <div className={styles.metricItem}>
-                <span className={styles.metricValue}>
-                  <Counter end={4} suffix="+" />
-                </span>
-                <span className={styles.metricLabel}>Engineering Disciplines</span>
+            {/* Right: CUBOIC Team Story & Narrative */}
+            <div className={styles.droneContentCol}>
+              {/* Team Profile Header (matches Image 2) */}
+              <div className={styles.teamProfileHeader}>
+                <div className={styles.teamAvatarRing}>
+                  <img
+                    src="/logo.png"
+                    alt="CUBOIC"
+                    className={styles.teamAvatarImg}
+                  />
+                </div>
+                <div className={styles.teamMeta}>
+                  <div className={styles.teamNameRow}>
+                    <span className={styles.teamHandle}>cuboic.team</span>
+                    {/* Blue Verified Badge */}
+                    <svg
+                      className={styles.verifiedBadge}
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-label="Verified"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#3897f0" />
+                      <path
+                        d="M9 12l2 2 4-4"
+                        stroke="#ffffff"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span className={styles.teamRole}>Hardware &amp; Systems</span>
+                </div>
               </div>
-              <div className={styles.metricDivider} />
-              <div className={styles.metricItem}>
-                <span className={styles.metricValue}>
-                  <Counter end={100} suffix="%" />
-                </span>
-                <span className={styles.metricLabel}>In-House Hardware & Code</span>
+
+              {/* Team Story Quote Card */}
+              <div className={styles.quoteCard}>
+                <blockquote className={styles.quoteText}>
+                  &ldquo;There&apos;s a lot more to building a drone than what you see on the outside. Every part has a purpose, every connection matters, and getting everything to work together takes time, patience, and a lot of testing. That&apos;s what makes this kind of work interesting to us. We get to take an idea, work through the challenges, figure out what works and what doesn&apos;t, and slowly turn it into something real. We don&apos;t expect everything to be perfect on the first try, but we do believe in putting in the work until it gets there. For us, building drones isn&apos;t just about the finished machine. It&apos;s about everything that goes into making it work.&rdquo;
+                </blockquote>
               </div>
-              <div className={styles.metricDivider} />
-              <div className={styles.metricItem}>
-                <span className={styles.metricValue}>
-                  <Counter end={99} prefix="99." suffix="%" />
-                </span>
-                <span className={styles.metricLabel}>Mission Reliability</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Second Product Showcase: Autonomous Rover on Right with White Semicircle */}
+        <section className={styles.roverProductSection}>
+          {/* White Semicircle Backdrop behind Rover on Right for depth */}
+          <div className={styles.whiteSemicircleRight} aria-hidden="true" />
+
+          <div className={styles.roverProductContainer}>
+            {/* Left: Narrative & Description Column */}
+            <div className={styles.roverContentCol}>
+              {/* Profile Header & Story placeholder */}
+              <div className={styles.teamProfileHeader}>
+                <div className={styles.teamAvatarRing}>
+                  <img
+                    src="/logo.png"
+                    alt="CUBOIC"
+                    className={styles.teamAvatarImg}
+                  />
+                </div>
+                <div className={styles.teamMeta}>
+                  <div className={styles.teamNameRow}>
+                    <span className={styles.teamHandle}>cuboic.team</span>
+                    {/* Blue Verified Badge */}
+                    <svg
+                      className={styles.verifiedBadge}
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-label="Verified"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#3897f0" />
+                      <path
+                        d="M9 12l2 2 4-4"
+                        stroke="#ffffff"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span className={styles.teamRole}>Robotics &amp; Autonomous Mobility</span>
+                </div>
               </div>
-              <div className={styles.metricDivider} />
-              <div className={styles.metricItem}>
-                <span className={styles.metricValue}>
-                  <Counter end={24} suffix="/7" />
-                </span>
-                <span className={styles.metricLabel}>Autonomous Operation</span>
+
+              {/* Story Quote Card */}
+              <div className={styles.quoteCard}>
+                <blockquote className={styles.quoteText}>
+                  &ldquo;Building a rover is an interesting challenge because so many different things have to work together. The frame, wheels, suspension, electronics, and control systems all play their part, and even a small change in one area can affect the way the whole machine behaves. A lot of the work happens through testing, making adjustments, and figuring out how to make things work better. We enjoy that process at Cuboic, getting hands-on with the engineering, learning from what doesn&apos;t work, and finding ways to improve with every iteration. In the end, it&apos;s about building something that doesn&apos;t just look good on paper, but can actually move, respond, and do what it&apos;s meant to do.&rdquo;
+                </blockquote>
               </div>
             </div>
 
-            {/* Bottom Callout Banner */}
-            <div className={styles.bottomBanner}>
-              <div className={styles.bannerGlow} />
-              <div className={styles.bannerContent}>
-                <span className={styles.bannerTag}>CUBOIC COLLABORATIVE</span>
-                <h3 className={styles.bannerTitle}>Have a vision that defies standard engineering?</h3>
-                <p className={styles.bannerSub}>Let&apos;s build the future together. Partner with our multidisciplinary collective.</p>
+            {/* Right: Rover Model Bleeding Off Right Screen (40% hidden) */}
+            <div className={styles.roverVisualCol}>
+              <div className={styles.roverImageWrapper}>
+                <img
+                  src="/cuboic_rover.png"
+                  alt="CUBOIC All-Terrain Autonomous Rover"
+                  className={styles.roverImage}
+                />
               </div>
-              <a
-                href="#contact"
-                className={styles.bannerButton}
-              >
-                CONNECT WITH US →
-              </a>
             </div>
           </div>
         </section>

@@ -76,9 +76,9 @@
 
 .brandText {
   font-family: var(--font-oxanium), "Oxanium", sans-serif;
-  font-size: 1.22rem;
+  font-size: clamp(1.38rem, 1.7vw, 1.55rem);
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);

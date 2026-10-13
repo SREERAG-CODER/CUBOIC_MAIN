@@ -44,10 +44,10 @@ export default function Navbar() {
         {/* Right: Unique Unboxed Social Logos */}
         <div className={styles.navRight}>
           <a
-            href="https://www.instagram.com/cuboic.official/"
+            href="https://www.instagram.com/cuboic?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0MzIxNw=="
             className={`${styles.socialLink} ${styles.instagramLink}`}
             aria-label="Instagram"
-            title="Instagram — @cuboic.official"
+            title="Instagram — @cuboic"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -63,7 +63,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="https://www.linkedin.com/company/cuboic/"
+            href="https://www.linkedin.com/company/cuboicrobotics/posts/?feedView=all"
             className={`${styles.socialLink} ${styles.linkedinLink}`}
             aria-label="LinkedIn"
             title="LinkedIn — CUBOIC"
