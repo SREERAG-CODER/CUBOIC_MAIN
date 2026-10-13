@@ -201,11 +201,57 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .footerInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 3.5rem 1.5rem 1.5rem;
+  }
+
+  .brandTagline {
+    font-size: 0.95rem;
+  }
+
+  .colTitle {
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+  }
+
+  .footerLink {
+    font-size: 0.88rem;
+  }
+
+  .socialLink {
+    font-size: 0.88rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.05rem;
+  }
+
+  .ctaSub {
+    font-size: 0.8rem;
+  }
+
+  .ctaCard {
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+  }
+
+  .wordmarkWrapper {
+    height: clamp(80px, 14vw, 160px);
+  }
+
+  .wordmark {
+    font-size: clamp(5rem, 17vw, 14rem);
+  }
+}
+
+@media (max-width: 480px) {
   .footerInner {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 3rem 1.5rem 1.5rem;
+    gap: 2rem;
+    padding: 2.5rem 1.25rem 1.25rem;
   }
 
   .brandCol {
@@ -213,9 +259,22 @@
     text-align: center;
   }
 
+  .brandTagline {
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+
   .linkCol {
     align-items: center;
     text-align: center;
+  }
+
+  .colTitle {
+    font-size: 0.78rem;
+    margin-bottom: 0.85rem;
   }
 
   .socialList {
@@ -229,13 +288,23 @@
   .ctaCard {
     align-items: center;
     text-align: center;
+    padding: 1rem 1rem;
+    border-radius: 12px;
+  }
+
+  .ctaTitle {
+    font-size: 1rem;
+  }
+
+  .ctaSub {
+    font-size: 0.78rem;
   }
 
   .wordmarkWrapper {
-    height: clamp(80px, 15vw, 140px);
+    height: clamp(60px, 12vw, 120px);
   }
 
   .wordmark {
-    font-size: clamp(6rem, 16vw, 12rem);
+    font-size: clamp(4.5rem, 15vw, 10rem);
   }
 }

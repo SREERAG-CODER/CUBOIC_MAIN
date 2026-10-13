@@ -300,9 +300,81 @@
   transform: scale(1.15);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .showcaseWrapper {
+    max-width: 360px;
+    padding: 0.75rem 0;
+  }
+
   .phoneBody {
-    width: 280px;
-    height: 560px;
+    width: 290px;
+    height: 580px;
+    border-radius: 40px;
+    padding: 7px;
+  }
+
+  .screen {
+    border-radius: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcaseWrapper {
+    max-width: 320px;
+    padding: 0.5rem 0;
+  }
+
+  .phoneBody {
+    width: 260px;
+    height: 520px;
+    border-radius: 36px;
+    padding: 6px;
+  }
+
+  .screen {
+    border-radius: 31px;
+  }
+
+  .storyHeader {
+    padding: 16px 11px 8px;
+  }
+
+  .progressContainer {
+    margin-bottom: 10px;
+  }
+
+  .profileName {
+    font-size: 11.5px;
+  }
+
+  .storyTimestamp {
+    font-size: 10px;
+  }
+
+  .profileSub {
+    font-size: 9.5px;
+  }
+
+  .storyFooter {
+    padding: 10px 11px 14px;
+    gap: 10px;
+  }
+
+  .employeeCard {
+    padding: 8px 11px;
+    border-radius: 12px;
+  }
+
+  .employeeRole {
+    font-size: 11.5px;
+  }
+
+  .employeeTags {
+    font-size: 9px;
+  }
+
+  .inputPill {
+    height: 34px;
+    font-size: 11px;
   }
 }

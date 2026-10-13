@@ -481,19 +481,51 @@
   .detailItem {
     justify-content: center;
   }
+
+  .description {
+    max-width: 100%;
+  }
 }
 
-@media (max-width: 640px) {
-  .contactHeadingImg {
-    width: clamp(230px, 85vw, 360px);
+@media (max-width: 768px) {
+  .contactCardFullWidth {
+    padding: 3rem 0;
   }
 
   .contactCardInner {
-    padding: 0 1.25rem;
+    padding: 0 1.5rem;
+  }
+
+  .contactHeadingImg {
+    width: clamp(260px, 65vw, 440px);
+  }
+
+  .contactHeadingWrapper {
+    margin-bottom: clamp(1.8rem, 3.5vw, 3rem);
+  }
+
+  .heroHeading {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+
+  .description {
+    font-size: 0.92rem;
   }
 
   .formRow {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .textInput {
+    padding: 12px 14px 12px 40px;
+    font-size: 0.9rem;
+  }
+
+  .textareaInput {
+    padding: 12px 14px 12px 40px;
+    font-size: 0.9rem;
+    min-height: 100px;
   }
 
   .actionRow {
@@ -508,6 +540,75 @@
   }
 
   .mapContainer {
-    height: 400px;
+    height: 420px;
+  }
+
+  .detailLink {
+    font-size: 0.92rem;
+  }
+
+  .detailTitle {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactCardFullWidth {
+    padding: 2.5rem 0;
+  }
+
+  .contactCardInner {
+    padding: 0 1rem;
+  }
+
+  .contactHeadingImg {
+    width: clamp(200px, 80vw, 340px);
+  }
+
+  .contactHeadingWrapper {
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .heroHeading {
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+  }
+
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .contactDetailsList {
+    gap: 1.2rem;
+  }
+
+  .detailItem {
+    gap: 1rem;
+  }
+
+  .textInput {
+    padding: 11px 12px 11px 38px;
+    font-size: 0.88rem;
+    border-radius: 10px;
+  }
+
+  .textareaInput {
+    padding: 11px 12px 11px 38px;
+    font-size: 0.88rem;
+    min-height: 90px;
+    border-radius: 12px;
+  }
+
+  .submitBtn {
+    padding: 12px 28px;
+    font-size: 0.88rem;
+  }
+
+  .mapContainer {
+    height: 340px;
+  }
+
+  .footerSpacer {
+    height: 80px;
   }
 }
