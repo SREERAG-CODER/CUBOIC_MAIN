@@ -1357,11 +1357,13 @@
   }
 
   .roverImageWrapper {
-    transform: translateX(25%);
+    transform: none;
   }
 
   .roverImage {
-    width: clamp(420px, 130vw, 700px);
+    width: clamp(240px, 86vw, 400px);
+    max-height: 45vh;
+    object-fit: contain;
   }
 
   .roverContentCol {
